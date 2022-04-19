@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #2170b1;
+    color: #3b3b3b;
+}
+
+.card {
+    width: 550px;
+    min-height: 625px;
+    margin: 20px 25px;
+    padding: 40px 35px;
+    background: #ffffff
+}
+
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.card-header h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #2170b1;
+}
+
+.card-header i {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2170b1;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.card .card-body {
+    margin: 15px 0;
+}
+
+.card-body .form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body .form input {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 16px;
+    outline: none;
+    border: 2px solid #2170b1;
+}
+
+.card-body .form input::placeholder {
+    color: #c0c0c0;
+}
+
+.card-body .form button {
+    position: relative;
+    font-size: 18px;
+    padding: 10px 24px;
+    background: #2170b1;
+    border: 2px solid #2170b1;
+    color: white;
+    cursor: pointer;
+}
+
+.card-body .form .icon-spinner {
+    display: none;
+    position: absolute;
+    left: -36px;
+    font-size: 24px;
+    color: #2170b1;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card-body .form button.loading {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.card-body .alert-notif {
+    margin-top: 10px;
+    height: 35px;
+    width: 100%;
+    color: #ffffff;
+    background: rgba(255, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.card-body .alert-notif .alert-message {
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body .weather-result {
+    padding-top: 30px;
+}
+
+.weather-result .weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.weather-result .weather .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.weather .info .details .numb {
+    font-size: 40px;
+    color: #2170b1;
+    font-weight: 700;
+}
+
+.weather .info .details .numb .temp {
+    font-size: 70px;
+}
+
+.weather .info .details p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.weather .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather .location .address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather .location i {
+    font-size: 32px;
+    color: #2170b1;
+}
+
+.weather .location .city {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather .location :where(.long, .lang) {
+    font-size: 14px;
+}
+
+.weather-result .condition {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.condition :where(.feels, .humidity, .visibility) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.condition :where(.feels, .humidity, .visibility) i {
+    font-size: 32px;
+    color: #2170b1;
+}
+
+.condition :where(.feels, .humidity, .visibility) .numb {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.condition :where(.feels, .humidity, .visibility) p {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin: 10px 15px;
+    }
+
+    .card-body .weather-result {
+        padding-top: 10px;
+    }
+
+    .weather-result .weather {
+        gap: 15px;
+    }
+
+    .weather-result .weather .info {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+    .condition :where(.feels, .humidity, .visibility) {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .condition :where(.feels, .humidity, .visibility) .numb {
+        font-size: 18px;
+    }
+
+    .condition :where(.feels, .humidity, .visibility) p {
+        font-size: 12px;
+    }
+}

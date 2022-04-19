@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Weather</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h1>City Weather</h1>
+            <i class="fas fa-street-view" id="locationDevice"></i>
+        </div>
+        <div class="card-body">
+            <div class="form">
+                <form autocomplete="off">
+                    <input type="text" placeholder="Input the city name..." id="cityInput">
+                    <button id="searchButton">
+                        <i class="fas fa-spinner icon-spinner" id="iconSpinner"></i>
+                        <i class="fas fa-search" id="iconSearch"></i>
+                    </button>
+                </form>
+                <div class="alert-notif" id="alertNotif">
+                    <p class="alert-message" id="alertMessage"></p>
+                </div>
+            </div>
+            <div class="weather-result">
+                <div class="weather">
+                    <div class="info">
+                        <img src="img/cloud.svg" width="150" alt="Weather Icon" id="imgWeather">
+                        <div class="details">
+                            <span class="numb"><span class="temp" id="temp">00.00</span>&#176;C</span>
+                            <p id="weatherDescription">Weather</p>
+                        </div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="address">
+                            <span class="city" id="city">City (Country)</span>
+                            <div>
+                                <span class="lang" id="latitude">Latitude</span>,
+                                <span class="long" id="longitude">Longitude</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="condition">
+                    <div class="visibility">
+                        <i class="fas fa-eye"></i>
+                        <div class="details">
+                            <span class="numb"><span id="visibility">00</span>KM</span>
+                            <p>Visibility</p>
+                        </div>
+                    </div>
+                    <div class="feels">
+                        <i class="fas fa-thermometer-half"></i>
+                        <div class="details">
+                            <span class="numb"><span id="feelsLike">00.00</span>&#176;C</span>
+                            <p>Feels like</p>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <i class="fas fa-tint"></i>
+                        <div class="details">
+                            <span class="numb"><span id="humidity">00</span>%</span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
